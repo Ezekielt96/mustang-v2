@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<!--
+    Author:  Ezekiel Towner
+    Class:   Web & Distributed Programming 
+
+    Description: This application is intended to be a reference implementatin for Mustang V2.
+-->
+    <head>
+        <meta charset="UTF-8">
+        <title>Mustang v2</title>
+        <link rel="stylesheet" href="mustang-v2.css">
+        <script src="mustang-v2js.js"></script>
+        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+        <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script src = "autocomplete.js"></script>
+    </head>
+    <body onload="initApplication()">
+        <h1>Mustang version 2 </h1> 
+        <h2>Auto Complete</h2>
+        <!--Make sure the form has the autocomplete function switched off:-->
+  <div class = "ui-widget">
+        <h2>Type in a Contact</h2>
+        <label for="automplete-1">Tags: </label>
+        <input id="automplete-1">
+    </div>
+    
+    <Script>
+        $(function() {
+    var availableTutorials  =  [
+        "Q",
+        "Stevie Wonder",
+        "Captain America",
+        "Matt",
+        "Jessica",
+        "Elizabeth",
+        "Zeke",
+        "Kakarott",
+        "Sheila",
+        "Hermione",
+        "Wonderwoman",
+        "Reina",
+        "Merc with the mouth",
+        "Josh",
+       " Mermaid Man",
+        "John",
+        "Nick",
+        "Pete",
+        "Gabe",
+        "Hulk",
+        "Thanos",
+        "Eric",
+        "Batman",
+        "Mouse, Mickey"
+    ];
+    $( "#automplete-1" ).autocomplete({
+        source: availableTutorials
+    });
+});
+    </Script>
+    
+            <table>
+                <td>Name:</td>
+                <td> 
+                    <input id="nameID" type="text" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>
+                    <input id="emailID" type="text" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td>
+                    <input id="cityID" type="text" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td>
+                    <input id="stateID" type="text" value="" size="20" onkeypress="keyPressed()">
+                </td>
+            </tr>
+            <tr>
+                <td>Zip</td>
+                <td>
+                    <input id="zipID" type="text" value="" size="20" onfocus="zipFocusFunction()" onblur="zipBlurFunction()">
+                </td>
+                <script>
+                    
+                    
+           
+                </script>
+                
+            </tr>
+            <tr>
+                <td><button type="button" onclick="previous()">Previous</button></td>
+                <td><button type="button" autofocus onclick="next()">Next</button>
+                </td>
+            <tr>
+                <td><button type="button" onclick="add()">New</button></td>
+                <td><button type="button" onclick="remove()">Delete</button>
+            </td>
+            </tr>
+        </table>
+
+        <p id="statusID"></p>
+        <br><br><hr>
+        <button onclick="loadIndex()">Load Index</button><br>
+        <h2>Index</h2>
+        <p id="indexID"></p>
+        <button onclick="loadContacts()">Load Contacts</button><br>
+        <h2>Contacts</h2>
+        <p id="contactsID"></p>
+        <button onclick="logContacts()">Log Contacts to Console</button><br> 
+    </body>
+</html>
